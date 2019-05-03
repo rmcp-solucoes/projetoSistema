@@ -36,28 +36,46 @@
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
-                        <li class="nav-item active">
-                            <a class="btn-tamanho btn btn-primary" role="button" href="#">
+                        <li class="nav-item">
+                            <a href="#cadastroMenu" data-toggle="collapse" aria-expanded="false"
+                                class="dropdown-toggle btn-tamanho btn btn-primary" role="button">
+                                <span data-feather="file"></span>
+                                Cadastro</a>
+                            <ul class="collapse list-unstyled" id="cadastroMenu">
+                                <li>
+                                    <a class="btn-tamanho btn btn-outline-info" role="button" href="#cadastroClientes">
+                                        <span data-feather="file"></span>
+                                        Cadastro de Clientes</a>
+                                </li>
+                                <li>
+                                    <a class="btn-tamanho btn btn-outline-info" role="button" href="#infoClientes">
+                                        <span data-feather="file"></span>
+                                        Informação de Clientes Cadastrados</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn-tamanho btn btn-primary" role="button" href="#identificacao">
                                 <span data-feather="file"></span>
                                 Identificação</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn-tamanho btn btn-primary" role="button" href="#">
+                            <a class="btn-tamanho btn btn-primary" role="button" href="#anunciante">
                                 <span data-feather="file"></span>
                                 Anunciante</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn-tamanho btn btn-primary" role="button" href="#">
+                            <a class="btn-tamanho btn btn-primary" role="button" href="#pubAlvo">
                                 <span data-feather="file"></span>
                                 Público Alvo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn-tamanho btn btn-primary" role="button" href="#">
+                            <a class="btn-tamanho btn btn-primary" role="button" href="#concorrencia">
                                 <span data-feather="file"></span>
                                 Concorrência</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn-tamanho btn btn-primary" role="button" href="#">
+                            <a class="btn-tamanho btn btn-primary" role="button" href="#objetivos">
                                 <span data-feather="file"></span>
                                 Objetivos</a>
                         </li>
@@ -67,11 +85,11 @@
                                 Verba Disponível</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#pedidoTrabalho" data-toggle="collapse" aria-expanded="false"
+                            <a href="#pedidoTrabalhoMenu" data-toggle="collapse" aria-expanded="false"
                                 class="dropdown-toggle btn-tamanho btn btn-primary" role="button">
                                 <span data-feather="file"></span>
                                 Pedido de Trabalho</a>
-                            <ul class="collapse list-unstyled" id="pedidoTrabalho">
+                            <ul class="collapse list-unstyled" id="pedidoTrabalhoMenu">
                                 <li>
                                     <a class="btn-tamanho btn btn-outline-info" role="button" href="#">
                                         <span data-feather="file"></span>
@@ -99,39 +117,291 @@
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div id="identificacao" class="">
+                <div class="mt-2 p-3 rounded">
+                    <!-- Início Cadastro -->
+                    <h3>Cadastro</h3>
+                    <hr id="cadastroClientes" class="my-5">
+                    <div class="container my-5">
+                        <form action="" method="" class="form-group">
+                            <h5 class="mb-5">Cadastro de clientes</h5>
+
+                            <label for="nome">Nome:</label>
+                            <input type="text" name="nome" id="nomeCliente" class="form-control mb-2"
+                                placeholder="Insira o nome do Cliente/Empresa " required>
+
+                            <label for="cpfCnpj">CPF/CNPJ:</label>
+                            <input type="number" name="cpfCnpj" id="cpfCnpjCliente" class="form-control mb-2"
+                                placeholder="Insira o CPF/CNPJ do Cliente/Empresa" required>
+
+                            <label for="email">E-mail:</label>
+                            <input type="email" name="email" id="emailCliente" class="form-control mb-2"
+                                placeholder="Cliente/Empresa@email.com" required>
+
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" name="telefone" id="telefoneCliente" class="form-control mb-2"
+                                placeholder="(61) 98765-4321" required>
+
+                            <input type="submit" value="Enviar" class="btn btn-outline-primary btn-block">
+                        </form>
+                    </div>
+                    <!-- Quando cadastrar um cliente, adicionar tabela automaticamente -->
+                    <hr id="infoClientes" class="my-5">
+                    <div class="container">
+                        <h5 class="mb-5">Informações de Clientes Cadastrados</h5>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">CPF/CNPJ</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Nome 1</th>
+                                    <td>111.222.333-44</td>
+                                    <td>email@email.com</td>
+                                    <td>(61) 98765-4321</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Nome 2</th>
+                                    <td>111.222.333-44</td>
+                                    <td>email@email.com</td>
+                                    <td>(61) 98765-4321</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Nome 3</th>
+                                    <td>111.222.333-44</td>
+                                    <td>email@email.com</td>
+                                    <td>(61) 98765-4321</td>
+                                </tr>
+                            </tbody>
+                        </table> <!-- fim tabela -->
+                    </div>
+                </div> <!-- Fim Cadastro -->
+
+                <hr id="identificacao" class="my-5 border border-dark">
+                <div class="">
                     <h3>Identificação</h3>
+                    <!-- Quando cadastrar um cliente, adicionar nas opções automaticamente -->
 
+                    <div class="container my-5">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="seletorClientes">Clientes</label>
+                            </div>
+                            <select class="custom-select" id="seletorClientes">
+                                <option selected></option>
+                                <option value="1">Cliente 1</option>
+                                <option value="2">Cliente 2</option>
+                                <option value="3">Cliente 3</option>
+                            </select>
+                        </div>
+                        <form action="" method="" class="form-group">
+
+                            <label for="produto">Produto:</label>
+                            <input type="text" name="produto" class="form-control mb-2"
+                                placeholder="Website, Sistema... " required>
+
+                            <label for="responsavel">Responsável:</label>
+                            <input type="text" name="responsavel" class="form-control mb-2"
+                                placeholder="Responsável pelo Projeto" required>
+
+                            <label for="data">Data:</label>
+                            <input type="date" name="data" class="form-control mb-2"
+                                placeholder="Cliente/Empresa@email.com" required>
+
+                            <label for="numeroServico">Número do Serviço:</label>
+                            <input type="number" name="numeroServico" class="form-control mb-2" placeholder="0001"
+                                required>
+
+                            <input type="submit" value="Enviar" class="btn btn-outline-primary btn-block">
+                        </form>
+                    </div>
+
+
+                </div> <!-- Fim Identificação -->
+
+                <hr id="anunciante" class="my-5 border border-dark">
+                <div class="container">
+                    <h3 class="mb-5">Anunciante</h3>
+                    <form action="form-group">
+                        <label for="historico">Histórico:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Breve histórico da empresa, composição industrial do produto (matéria-prima), política de vendas da empresa (prazos, descontos e promoções)"></textarea>
+                        <label for="indicaProduto">Indicação do Produto:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Indicação do nome do produto, serviço, marca ou empresa"></textarea>
+                        <label for="categoria">Categoria:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Categoria (tipo de produto ou serviço - ramo de atividade ou negócio)"></textarea>
+                        <label for="usoProduto">Uso do Produto:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Local, forma e frequência de uso do produto, serviço ou marca"></textarea>
+                        <label for="embalagem">Embalagens:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Embalagens (tipo de material, peso, conteúdo, formatos, etc)"></textarea>
+                        <label for="precos">Preços:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Preços praticados (revendedor/consumidor)"></textarea>
+                        <label for="onde">Onde encontrar:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Onde o produto pode ser encontrado (Distribuição/Pontos de venda)"></textarea>
+                        <label for="imagemProduto">Imagem no Mercado:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Imagem do produto no mercado"></textarea>
+                        <label for="pontosPositivos">Pontos Positivos:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Pontos positivos (vantagens)"></textarea>
+                        <label for="pontosNegativos">Pontos Negativos:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Pontos negativos (desvantagens)"></textarea>
+                        <label for="diferencaConcorrencia">Competitividade do Produto:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Principais características diferenciadoras da concorrência"></textarea>
+                        <label for="situacaoAtual">Situação atual:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Situação atual do anunciante - problemas x oportunidades"></textarea>
+                        <label for="propagandasAnteriores">Publicidade anterior:</label>
+                        <textarea name="" id="" class="form-control mb-2" rows="5"
+                            placeholder="Propagandas e campanhas anteriores"></textarea>
+
+                        <input type="submit" value="Enviar" class="btn btn-outline-primary btn-block">
+                    </form>
+
+                </div> <!-- Fim Anunciante -->
+
+                <hr id="pubAlvo" class="my-5 border border-dark">
+                <div class="">
+                    <h3 class="mb-5">Público Alvo</h3>
+                    <form action="" method="">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="idade">Idade:</label>
+                                <input type="number" class="form-control" id="" placeholder="25">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="sexo">Sexo:</label>
+                                <select id="" class="form-control">
+                                    <option selected></option>
+                                    <option>Masculino</option>
+                                    <option>Feminino</option>
+                                    <option>Ambos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="sexo">Renda:</label>
+                                <select id="" class="form-control">
+                                    <option selected></option>
+                                    <option>Entre R$ 768 e R$ 1.064</option>
+                                    <option>Entre R$ 1.064 e R$ 4.591</option>
+                                    <option>Superior a R$ 4.591</option>
+                                    <option>Todas as rendas</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="ocupacao">Ocupação:</label>
+                                <input type="text" class="form-control" id=""
+                                    placeholder="Segmento de trabalho, profissão...">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="estadoCivil">Estado Civil:</label>
+                                <select id="" class="form-control">
+                                    <option selected></option>
+                                    <option>Solteiros</option>
+                                    <option>Casados</option>
+                                    <option>Divorciados</option>
+                                    <option>Todos os estados</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" class="form-control" id="">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputState">Estado</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected></option>
+                                    <option value="acre">Acre (AC)</option>
+                                    <option value="alagoas">Alagoas (AL)</option>
+                                    <option value="amapa">Amapá (AP)</option>
+                                    <option value="amazonas">Amazonas (AM)</option>
+                                    <option value="bahia">Bahia (BA)</option>
+                                    <option value="ceara">Ceará (CE)</option>
+                                    <option value="distritoFederal">Distrito Federal (DF)</option>
+                                    <option value="espiritoSanto">Espírito Santo (ES)</option>
+                                    <option value="goias">Goiás (GO)</option>
+                                    <option value="maranhao">Maranhão (MA)</option>
+                                    <option value="matoGrosso">Mato Grosso (MT)</option>
+                                    <option value="matoGrossoSul">Mato Grosso do Sul (MS)</option>
+                                    <option value="minasGerais">Minas Gerais (MG)</option>
+                                    <option value="para">Pará (PA)</option>
+                                    <option value="paraiba">Paraíba (PB)</option>
+                                    <option value="parana">Paraná (PR)</option>
+                                    <option value="pernambuco">Pernambuco (PE)</option>
+                                    <option value="piaui">Piauí (PI)</option>
+                                    <option value="rioJaneiro">Rio de Janeiro (RJ)</option>
+                                    <option value="rioGrandeNorte">Rio Grande do Norte (RN)</option>
+                                    <option value="rioGrandeSul">Rio Grande do Sul (RS)</option>
+                                    <option value="rondonia">Rondônia (RO)</option>
+                                    <option value="roraima">Roraima (RR)</option>
+                                    <option value="santaCatarina">Santa Catarina (SC)</option>
+                                    <option value="saoPaulo">São Paulo (SP)</option>
+                                    <option value="sergipe">Sergipe (SE)</option>
+                                    <option value="tocantins">Tocantins (TO)</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2 mb-2">
+                                <label for="cep">CEP</label>
+                                <input type="number" class="form-control" id="">
+                            </div>
+                        </div>
+                        
+                        <input type="submit" value="Enviar" class="btn btn-outline-primary btn-block">
+                    </form>
+                </div> <!-- Fim Público Alvo -->
+
+                <hr id="concorrencia" class="my-5 border border-dark">
+                <div id="" class="">
+                    <h3 class="mb-5">Concorrência</h3>
+                    <form action="form-group">
+                        <label for="princConcorrente">Principais concorrentes:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Nome do concorrente - website (se houver)"></textarea>
+                        <label for="precos">Preços:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Produto - Preço"></textarea>
+                        <label for="pontosPositivos">Pontos Positivos:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Pontos positivos (vantagens)"></textarea>
+                        <label for="pontosNegativos">Pontos Negativos:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                            placeholder="Pontos negativos (desvantagens)"></textarea>
+                        <label for="diferencaConcorrencia">Competitividade do Produto:</label>
+                        <textarea name="" id="" class="form-control mb-5" rows="5"
+                                placeholder="Principais características dos produtos da concorrência"></textarea>
+                        <label for="propagandasAnteriores">Publicidade utilizada:</label>
+                        <textarea name="" id="" class="form-control mb-2" rows="5"
+                            placeholder="Propagandas e campanhas utilizadas pelos concorrentes"></textarea>
+
+                        <input type="submit" value="Enviar" class="btn btn-outline-primary btn-block">
+                    </form>
+                </div>
+
+                <hr id="objetivos" class="my-5 border border-dark">
+                <div id="" class="">
+                    <h3 class="mb-5">Objetivos</h3>
 
                 </div>
 
 
                 <div id="" class="">
-                    <h3>Anunciante</h3>
-
-                </div>
-
-
-                <div id="" class="">
-                    <h3>Público Alvo</h3>
-
-                </div>
-
-
-                <div id="" class="">
-                    <h3>Concorrência</h3>
-
-                </div>
-
-
-                <div id="" class="">
-                    <h3>Objetivos</h3>
-
-                </div>
-
-
-                <div id="" class="">
-                    <h3>Verba Disponível</h3>
+                    <h3 class="mb-5">Verba Disponível</h3>
 
                 </div>
 
@@ -144,13 +414,13 @@
 
 
                 <div id="" class="">
-                    <h3>Outras Informações</h3>
+                    <h3 class="mb-5">Outras Informações</h3>
 
                 </div>
 
 
                 <div id="" class="">
-                    <h3>Check-List</h3>
+                    <h3 class="mb-5">Check-List</h3>
 
                 </div>
 
